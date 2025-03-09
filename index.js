@@ -6,22 +6,16 @@ const dotenv = require('dotenv');
 // Load environment variables from .env file
 dotenv.config();
 
-
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-
 const db = admin.firestore();
 const app = express();
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
 
-
-// Middleware to parse JSON requestsn
+// Middleware to parse JSON requests
 app.use(express.json());
 
 // Predefined list of conditions for validation
@@ -123,7 +117,7 @@ app.get('/conditions', (req, res) => {
   });
 });
 
-// Start the server
+// Start the server (only once)
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
