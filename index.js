@@ -2,8 +2,8 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const dotenv = require('dotenv');
+const cors = require('cors'); // Add this
 
-// Load environment variables from .env file
 dotenv.config();
 
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
@@ -15,7 +15,7 @@ const db = admin.firestore();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON requests
+app.use(cors()); // Add this line
 app.use(express.json());
 
 // Predefined list of conditions for validation
