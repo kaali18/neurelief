@@ -7,9 +7,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-const serviceAccount = require('./neurorelief-bcc32-firebase-adminsdk-fbsvc-ddb5b8a26b.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert(serviceAccount),
 });
 
 
