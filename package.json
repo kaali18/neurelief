@@ -14,7 +14,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase-admin": "^13.2.0"
-    "cors": "^2.8.5"  // Add this line
+    "cors": "^2.8.5"  
   },
   "engines": {
     "node": "18.x"
