@@ -1,0 +1,61 @@
+// Define Kotlin version at the top (ext block is a common way to define variables)
+buildscript {
+    ext.kotlin_version = '1.9.22' // Use a stable Kotlin version compatible with Flutter
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0' // Ensure compatible Gradle plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.1' // For Firebase (FlutterFire)
+    }
+}
+
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace "com.example.neurelief"
+    compileSdk flutter.compileSdkVersion // Typically 33 or 34 with recent Flutter
+    ndkVersion flutter.ndkVersion // Usually set by Flutter (e.g., "25.1.8937393")
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId "com.example.neurelief"
+        minSdkVersion 23 // Good choice for modern apps
+        targetSdkVersion flutter.targetSdkVersion // Typically 33 or 34
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug // Using debug signing for simplicity
+        }
+    }
+}
+
+flutter {
+    source "../.."
+}
+
+dependencies {
+    // Use the defined kotlin_version variable
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "708066671296",
+    "project_id": "neurorelief-bcc32",
+    "storage_bucket": "neurorelief-bcc32.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708066671296:android:a6fe1fc6cdb385bee60b25",
+        "android_client_info": {
+          "package_name": "com.delta.neurorelief"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo4NKbZNgX682Xjk_by1Cbfe2YZQ564mM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708066671296:android:fcb65bfcf784191ce60b25",
+        "android_client_info": {
+          "package_name": "com.example.neurelief"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo4NKbZNgX682Xjk_by1Cbfe2YZQ564mM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
